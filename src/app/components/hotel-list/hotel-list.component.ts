@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IHotel } from './../hotel';
 
 @Component({
   selector: 'app-hotel-list',
@@ -8,13 +9,15 @@ import { Component, OnInit } from '@angular/core';
 export class HotelListComponent implements OnInit {
 
   title = 'Liste des hotels';
-  
+
   constructor() { }
 
   ngOnInit(): void {
+    this.filteredHotels = this.hotels;
+    this.hotelFilter = 'mot';
   }
 
-  public hotels: any[] = [
+  public hotels: IHotel[] = [
     {
           "hotelId": 1,
           "hotelName": "Buea sweet life",
@@ -51,10 +54,28 @@ export class HotelListComponent implements OnInit {
 
   public showBadge!: boolean;
 
-  public hotelFilter = 'mot';
+  private _hotelFilter = 'mot';
+
+  public filteredHotels: IHotel[] = [];
 
   public toggleIsNewBadge(): void {
     this.showBadge = !this.showBadge;
   };
 
+  public get hotelFilter(): string {
+    return this._hotelFilter;
+  }
+
+  public set hotelFilter(filter: string) {
+    this._hotelFilter = filter;
+    this.filteredHotels = this.hotelFilter ? this.filterHotels(this.hotelFilter) : this.hotels;
+  }
+
+  private filterHotels(criteria: string): IHotel[] {
+    criteria = criteria.toLowerCase();
+    const res = this.hotels.filter(
+      (hotel: IHotel) => hotel.hotelName.toLowerCase().indexOf(criteria) !== -1
+    );
+    return res;
+  }
 }
