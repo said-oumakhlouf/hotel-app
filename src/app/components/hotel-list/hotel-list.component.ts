@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IHotel } from './../hotel';
+import { IHotel } from './hotel';
 
 @Component({
   selector: 'app-hotel-list',
@@ -14,7 +14,7 @@ export class HotelListComponent implements OnInit {
 
   ngOnInit(): void {
     this.filteredHotels = this.hotels;
-    this.hotelFilter = 'mot';
+    this.hotelFilter = '';
   }
 
   public hotels: IHotel[] = [
@@ -48,7 +48,7 @@ export class HotelListComponent implements OnInit {
           "description": "Magnifique cadre pour votre séjour",
           "price": 135.12,
           "imageUrl": "assets/img/mexique.jpg",
-          "rating": 5
+          "rating": 4
     }
   ];
 

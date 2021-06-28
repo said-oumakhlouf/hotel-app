@@ -11,12 +11,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { HotelListComponent } from './components/hotel-list/hotel-list.component';
 import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
+import { NgPipesModule } from 'ngx-pipes';
+import { StarRatingComponent } from './components/star-rating/star-rating.component';
 registerLocaleData(localeFr, 'fr');
 
 @NgModule({
   declarations: [
     AppComponent,
-    HotelListComponent
+    HotelListComponent,
+    StarRatingComponent,
   ],
   imports: [
     BrowserModule,
@@ -24,6 +27,7 @@ registerLocaleData(localeFr, 'fr');
     BrowserAnimationsModule,
     MatIconModule,
     FormsModule,
+    NgPipesModule
   ],
   providers: [],
   bootstrap: [AppComponent]
