@@ -13,6 +13,11 @@ import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
 import { NgPipesModule } from 'ngx-pipes';
 import { StarRatingComponent } from './components/star-rating/star-rating.component';
+import { HttpClientModule } from '@angular/common/http';
+import { HomeComponent } from './components/home/home.component';
+import { HoteilDetailComponent } from './components/hotel-list/hoteil-detail/hoteil-detail.component';
+
+
 registerLocaleData(localeFr, 'fr');
 
 @NgModule({
@@ -20,6 +25,9 @@ registerLocaleData(localeFr, 'fr');
     AppComponent,
     HotelListComponent,
     StarRatingComponent,
+    HomeComponent,
+    HoteilDetailComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -27,7 +35,8 @@ registerLocaleData(localeFr, 'fr');
     BrowserAnimationsModule,
     MatIconModule,
     FormsModule,
-    NgPipesModule
+    NgPipesModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

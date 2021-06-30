@@ -16,8 +16,13 @@ export class HotelListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.hotels = this.hotelListService.getHotels();
-    this.filteredHotels = this.hotels;
+    this.hotelListService.getHotels().subscribe({
+      next: hotels => {
+        this.hotels = hotels;
+        this.filteredHotels = this.hotels;
+      },
+      error: err => this.errMsg = err
+    });
     this.hotelFilter = '';
   }
 
@@ -30,6 +35,8 @@ export class HotelListComponent implements OnInit {
   public filteredHotels: IHotel[] = [];
 
   public receivedRating!: string;
+
+  public errMsg!: string;
 
   public toggleIsNewBadge(): void {
     this.showBadge = !this.showBadge;
