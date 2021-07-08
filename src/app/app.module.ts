@@ -15,7 +15,7 @@ import { NgPipesModule } from 'ngx-pipes';
 import { StarRatingComponent } from './components/star-rating/star-rating.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './components/home/home.component';
-import { HoteilDetailComponent } from './components/hotel-list/hoteil-detail/hoteil-detail.component';
+import { HotelDetailComponent } from './components/hotel-list/hotel-detail/hotel-detail.component';
 
 
 registerLocaleData(localeFr, 'fr');
@@ -26,8 +26,7 @@ registerLocaleData(localeFr, 'fr');
     HotelListComponent,
     StarRatingComponent,
     HomeComponent,
-    HoteilDetailComponent,
-
+    HotelDetailComponent
   ],
   imports: [
     BrowserModule,

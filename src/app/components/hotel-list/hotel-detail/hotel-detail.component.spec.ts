@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HoteilDetailComponent } from './hoteil-detail.component';
+import { HotelDetailComponent } from './hotel-detail.component';
 
-describe('HoteilDetailComponent', () => {
-  let component: HoteilDetailComponent;
-  let fixture: ComponentFixture<HoteilDetailComponent>;
+describe('HotelDetailComponent', () => {
+  let component: HotelDetailComponent;
+  let fixture: ComponentFixture<HotelDetailComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HoteilDetailComponent ]
+      declarations: [ HotelDetailComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HoteilDetailComponent);
+    fixture = TestBed.createComponent(HotelDetailComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
